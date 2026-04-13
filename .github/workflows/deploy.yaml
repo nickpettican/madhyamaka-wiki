@@ -21,6 +21,7 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -38,6 +39,7 @@ jobs:
       - name: Copy wiki content
         run: |
           [ -d "_vault/wiki" ] || { echo "::error::_vault/wiki not found in vault repo"; exit 1; }
+          mkdir -p content
           cp -r _vault/wiki/. content/
 
       - name: Remove vault clone

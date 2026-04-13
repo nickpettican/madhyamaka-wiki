@@ -36,7 +36,7 @@ madhyamaka-wiki (public, Quartz)
 ### 1. Quartz repo — `.github/workflows/deploy.yaml` (new file)
 
 **Triggers:**
-- `push` to branch `v4` — so theme/config changes publish immediately
+- `push` to branch `main` — so theme/config changes publish immediately (this fork uses `main`; upstream Quartz uses `v4`)
 - `repository_dispatch` with event type `vault-updated` — triggered by vault repo on content changes
 - `workflow_dispatch` — manual trigger via GitHub UI
 
