@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'wiki/**'
+  workflow_dispatch:
 
 jobs:
   trigger:
@@ -12,6 +15,8 @@ jobs:
       - name: Dispatch build to madhyamaka-wiki
         run: |
           curl -L \
+            -sS \
+            --fail-with-body \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.QUARTZ_DISPATCH_PAT }}" \
