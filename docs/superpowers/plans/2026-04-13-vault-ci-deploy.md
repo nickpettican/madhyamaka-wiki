@@ -59,7 +59,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - v4
+      - main
   repository_dispatch:
     types:
       - vault-updated
@@ -136,7 +136,7 @@ git commit -m "ci: add GitHub Pages deploy workflow with vault content fetch"
 - [ ] **Step 3: Push to origin**
 
 ```bash
-git push origin v4
+git push origin main
 ```
 
 - [ ] **Step 4: Verify the workflow appears in GitHub**

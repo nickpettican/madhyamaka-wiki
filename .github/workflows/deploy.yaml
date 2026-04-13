@@ -36,7 +36,13 @@ jobs:
         run: git clone --depth 1 "https://$VAULT_PAT@github.com/nickpettican/madhyamaka-wiki-vault.git" _vault
 
       - name: Copy wiki content
-        run: cp -r _vault/wiki/. content/
+        run: |
+          [ -d "_vault/wiki" ] || { echo "::error::_vault/wiki not found in vault repo"; exit 1; }
+          cp -r _vault/wiki/. content/
+
+      - name: Remove vault clone
+        if: always()
+        run: rm -rf _vault
 
       - name: Setup Node
         uses: actions/setup-node@v4
