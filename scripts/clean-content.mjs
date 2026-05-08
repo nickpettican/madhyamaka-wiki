@@ -16,6 +16,7 @@ const SECTIONS_TO_STRIP = [
   "Role in Tenpa's argument",
   "Open questions",
   "Open questions / points of contention",
+  "Open questions / pending verification",
   "Current confidence level",
   "What would change Tenpa's mind\\?",
   "Why it matters",
