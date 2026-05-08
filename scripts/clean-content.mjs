@@ -15,6 +15,7 @@ const SECTIONS_TO_STRIP = [
   "Tenpa's assessment",
   "Role in Tenpa's argument",
   "Open questions",
+  "Open questions / points of contention",
   "Current confidence level",
   "What would change Tenpa's mind\\?",
   "Why it matters",
@@ -36,7 +37,7 @@ function escapeForApostrophes(title) {
 function stripSections(text) {
   for (const title of SECTIONS_TO_STRIP) {
     const pattern = new RegExp(
-      `^#{2,3}\\s+${escapeForApostrophes(title)}\\s*$[\\s\\S]*?(?=^#{1,3}\\s|\\Z)`,
+      `^#{2,3}\\s+${escapeForApostrophes(title)}\\s*$[\\s\\S]*?(?=^#{1,3}[ \\t]|$(?![\\s\\S]))`,
       "gm",
     );
     text = text.replace(pattern, "");
