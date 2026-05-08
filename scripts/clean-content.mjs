@@ -22,6 +22,7 @@ const SECTIONS_TO_STRIP = [
 
 const WORD_REPLACEMENTS = [
   [/\bingested\b/gi, "added"],
+  [/\bingesting\b/gi, "adding"],
   [/\bingestion\b/gi, "addition"],
   [/\bingest\b/gi, "addition"],
   [/\bclaude\b/gi, ""],
