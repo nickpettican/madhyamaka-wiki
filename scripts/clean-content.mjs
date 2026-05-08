@@ -10,6 +10,7 @@ if (!root) {
 
 const SECTIONS_TO_STRIP = [
   "Tenpa's critical notes",
+  "Tenpa's working notes",
   "Relevance to paper",
   "Tenpa's assessment",
   "Role in Tenpa's argument",
