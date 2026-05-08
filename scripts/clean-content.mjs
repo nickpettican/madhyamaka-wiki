@@ -50,7 +50,8 @@ function applyWordReplacements(text) {
 }
 
 function stripTenpa(text) {
-  text = text.replace(/\bTenpa(['’]s)\b\s*/g, "the wiki author's");
+  text = text.replace(/\bTenpa(['’]s)\s*paper\b/g, "the argument of framework necessity");
+  text = text.replace(/\bTenpa(['’]s)\b/g, "the wiki author's");
   return text.replace(/\bTenpa\swants\b/g, "we want");
 }
 
