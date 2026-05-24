@@ -42,7 +42,7 @@ jobs:
           mkdir -p content
           cp -r _vault/wiki/. content/
           rm content/log.*
-          rm content/papers/*
+          rm -rf content/papers/*
           node scripts/clean-content.mjs content/
 
       - name: Remove vault clone
